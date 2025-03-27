@@ -16,19 +16,8 @@ public class ProcessadorEncomendas {
             double valorFrete = peso * 10;
             System.out.println("Valor do frete calculado: " + valorFrete);
 
-
-            salvarEmArquivo(idEncomenda, valorFrete);
+            SaveArquivo.salvarEmArquivo(idEncomenda, valorFrete);
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void salvarEmArquivo(String idEncomenda, double valorFrete) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("encomendas.txt", true))) {
-            bw.write("ID: " + idEncomenda + " - Frete: " + valorFrete);
-            bw.newLine();
-            System.out.println("Salvo no arquivo encomendas.txt");
-        } catch (IOException e) {
             e.printStackTrace();
         }
     }
