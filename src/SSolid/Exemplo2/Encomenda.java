@@ -3,12 +3,12 @@ package SSolid.Exemplo2;
 public class Encomenda {
     private String idEncomenda;
     private double peso;
-    private double valorFrete = (getPeso() * 10);
+    private double valorFrete;
 
-    public Encomenda(String idEncomenda, double peso, double valorFrete) {
+    public Encomenda(String idEncomenda, double peso) {
         this.idEncomenda = idEncomenda;
         this.peso = peso;
-        this.valorFrete = valorFrete;
+        this.valorFrete = (getPeso() * 10);
     }
 
     public String getIdEncomenda() {
